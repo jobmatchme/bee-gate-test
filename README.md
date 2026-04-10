@@ -42,8 +42,9 @@ A minimal Helm chart is provided in `charts/bee-gate-test`.
 
 The chart intentionally does not create or require a Secret. Its only
 application-level setting is `subject`, which is mapped to
-`BEE_GATE_TEST_SUBJECT`. The NATS server target stays fixed to the cluster
-default used by the container image.
+`BEE_GATE_TEST_SUBJECT`. The chart also defaults `BEE_GATE_TEST_NATS_SERVERS`
+to `nats://nats.nats.svc.cluster.local:4222` and `BEE_GATE_TEST_NATS_NAME` to
+`bee-gate-test`, matching the container defaults for in-cluster deployments.
 
 ## Publishing
 

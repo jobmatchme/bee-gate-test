@@ -3,7 +3,7 @@ import type { BeeGateTestConfig } from "./types.js";
 export function loadConfig(): BeeGateTestConfig {
 	return {
 		nats: {
-			servers: process.env.BEE_GATE_TEST_NATS_SERVERS || "nats://127.0.0.1:4222",
+			servers: process.env.BEE_GATE_TEST_NATS_SERVERS || "nats://nats.nats.svc.cluster.local:4222",
 			name: process.env.BEE_GATE_TEST_NATS_NAME || "bee-gate-test",
 		},
 		worker: {

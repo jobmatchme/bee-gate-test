@@ -1,5 +1,9 @@
 subject: bee.agent.test
 
+nats:
+  servers: nats://nats.nats.svc.cluster.local:4222
+  name: bee-gate-test
+
 image:
   repository: ghcr.io/jobmatchme/bee-gate-test
   tag: "0.1.1"

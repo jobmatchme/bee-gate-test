@@ -27,6 +27,10 @@ spec:
           image: {{ printf "%s:%s" .Values.image.repository .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: BEE_GATE_TEST_NATS_SERVERS
+              value: {{ .Values.nats.servers | quote }}
+            - name: BEE_GATE_TEST_NATS_NAME
+              value: {{ .Values.nats.name | quote }}
             - name: BEE_GATE_TEST_SUBJECT
               value: {{ .Values.subject | quote }}
           securityContext:
