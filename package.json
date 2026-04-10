@@ -1,6 +1,6 @@
 {
 	"name": "@jobmatchme/bee-gate-test",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Local fake Bee Dance agent for testing Bee Gate integrations",
 	"type": "module",
 	"main": "./dist/index.js",
