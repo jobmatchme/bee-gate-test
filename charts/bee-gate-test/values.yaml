@@ -1,0 +1,14 @@
+subject: bee.agent.test
+
+image:
+  repository: ghcr.io/jobmatchme/bee-gate-test
+  tag: "0.1.1"
+  pullPolicy: IfNotPresent
+  pullSecretName: ""
+
+deployment:
+  replicas: 1
+
+pod:
+  labels: {}
+  fsGroup: 10001

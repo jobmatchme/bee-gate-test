@@ -25,6 +25,26 @@ This package is mainly intended for:
 - contract testing of Bee Dance event handling
 - development environments where a real agent backend is not available yet
 
+## Docker
+
+A container image can run the fake agent directly and only needs the same
+environment variables as the Node.js process:
+
+- `BEE_GATE_TEST_SUBJECT` to choose the base NATS subject
+- `BEE_GATE_TEST_NATS_SERVERS` to override the NATS server list when needed
+
+The bundled `Dockerfile` installs the published npm package and starts the test
+agent with the defaults that fit the in-cluster `nats` service.
+
+## Helm
+
+A minimal Helm chart is provided in `charts/bee-gate-test`.
+
+The chart intentionally does not create or require a Secret. Its only
+application-level setting is `subject`, which is mapped to
+`BEE_GATE_TEST_SUBJECT`. The NATS server target stays fixed to the cluster
+default used by the container image.
+
 ## Publishing
 
 The package is intended for public npm publication from GitHub Actions using npm
